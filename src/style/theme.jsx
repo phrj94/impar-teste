@@ -10,12 +10,9 @@ const theme = {
     text: '#263238',
     label: '#454545',
     primary: '#5F1478',
+    secondary: '#AE276F',
     grey: '#757575',
     alert: '#DB2525',
-    gradient: {
-        primary: '#AE276F',
-        secondary: '#5F1478'
-    }
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -27,7 +24,8 @@ const theme = {
     xLarge: "24",
     xxLarge: "32",
     xxxLarge: "64"
-  }
+  },
+  borderDefault: '1px solid #E4E4E4'
 };
 
 const Theme = ({ children }) => (
