@@ -16,14 +16,14 @@ const theme = {
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
-    xxSmall: "12",
-    xSmall: "14",
-    small: "15",
-    medium: "16",
-    large: "18",
-    xLarge: "24",
-    xxLarge: "32",
-    xxxLarge: "64"
+    xxSmall: "12px",
+    xSmall: "14px",
+    small: "15px",
+    medium: "16px",
+    large: "18px",
+    xLarge: "24px",
+    xxLarge: "32px",
+    xxxLarge: "64px"
   },
   borderDefault: '1px solid #E4E4E4'
 };
