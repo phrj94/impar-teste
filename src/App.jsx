@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Content from "./components/content";
 import Header from "./components/header";
 import TopBar from "./components/topbar";
 import Theme from "./style/theme";
+import Context from "./context";
+
 
 const ContainerApp = styled.div`
   width: 100vw;
@@ -16,20 +18,25 @@ const ContainerApp = styled.div`
 const Main = styled.main`
   width: 100%;
   height: 100%;
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
 `;
 
 function App() {
+  const [search, setSearch] = useState('');
+  const [searchedPokemonCards, setSearchedPokemonCards] = useState([]);
+  const [pokemonCards, setPokemonCards] = useState([]);
+
   return (
     <Theme>
       <ContainerApp>
-        <TopBar/>
-        <Main>
-          <Header></Header>
-          <Content/>
-        </Main>
+        <TopBar />
+        <Context.Provider value={{search, setSearch, searchedPokemonCards, setSearchedPokemonCards, pokemonCards, setPokemonCards}}>
+          <Main>
+            <Header/>
+            <Content/>
+          </Main>
+        </Context.Provider>
       </ContainerApp>
     </Theme>
   );
