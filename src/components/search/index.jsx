@@ -32,9 +32,10 @@ const SearchBar = styled.input`
     padding-left: 28px;
     :focus-visible {
         outline: none;
+       
     }
-    :hover {
-        cursor: pointer;
+    :focus {
+         cursor: text;
     }
 `;
 
