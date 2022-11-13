@@ -14,13 +14,11 @@ const HeaderContainer = styled.header`
     justify-content: center;
 `;
 
-const Header = () => {
-    return (
-        <HeaderContainer >
-           <Search/>
+const Header = () => (
+    <HeaderContainer>
+        <Search />
+    </HeaderContainer>
+)
 
-        </HeaderContainer>
-    )
-}
 
 export default Header;
