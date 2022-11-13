@@ -11,6 +11,7 @@ const Bar = styled.div`
     background-image: linear-gradient(to right, ${props => props.theme.colors.primary} , ${props => props.theme.colors.secondary});
     display: flex;
     align-items: center;
+    z-index: 2;
 `;
 
 const Logo = styled.img`
