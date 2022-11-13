@@ -17,11 +17,18 @@ const PrimaryBtn = styled.button`
     border-radius: 8px;
     border: ${props => props.btnType === "cancel" ?  '1px solid ' + props.theme.colors.alert : "none"};
     box-shadow: 0px 3px 6px #92207242;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+
+    :hover {
+        cursor: not-allowed;
+    }
 `;
 
 const Button = ({ btnType, btnAction, btnText }) => {
+    const notImplemented = "Funcionalidade não implementada"
     return (
-        <PrimaryBtn btnType={btnType} onClick={btnAction}>{btnText}</PrimaryBtn>
+        <PrimaryBtn title={notImplemented} btnType={btnType}>{btnText}</PrimaryBtn>
     )
 }
 

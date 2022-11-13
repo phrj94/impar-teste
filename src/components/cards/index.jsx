@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import styled from "styled-components";
 
 import { ReactComponent as RemoveIcon } from '../../assets/Icon-trash.svg';
@@ -21,6 +21,7 @@ const CardContainer = styled.div`
 
 const CardContent = styled.div`
     padding: 8px;
+    min-height: 202px;
 `;
 
 const CardTopContent = styled.div`
@@ -44,22 +45,29 @@ const PokemonName = styled.span`
     background: ${props => props.theme.colors.orange};
     color: ${props => props.theme.colors.white};
     border-radius: 8px 8px 0 0;
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;
 
 const CardTextContent = styled.div`
     display: inline-block;
     width: 100%;
     margin-top: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;
 const Label = styled.label`
     font-weight: bold;
     font-size: 16px;
     margin-right: 4px;
+    color: ${props => props.theme.colors.label};
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;
 
 const Text = styled.span`
     font-weight: 500;
     font-size: 14px;
+    color: ${props => props.theme.colors.text};
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;
 
 const CardFooter = styled.div`
@@ -77,7 +85,7 @@ const CardAction = styled.div`
     justify-content: space-between;
 
     :hover {
-        cursor: pointer;
+        cursor: not-allowed;
     }
 `;
 
@@ -91,6 +99,8 @@ const CardActionEdit = styled(EditIcon)`
 
 const CardActionText = styled.span`
     margin-left: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: ${props => props.theme.colors.text};
 `;
 
 const Divider = styled.div`
@@ -102,6 +112,8 @@ const Divider = styled.div`
 
 const Card = ({ name, lastCard }) => {
     const [pokemon, setPokemon] = useState();
+    
+    const notImplemented = 'Funcionalidade não implementada.'
 
     const mountPokemonCard = useCallback(async () => {
         try {
@@ -109,8 +121,11 @@ const Card = ({ name, lastCard }) => {
             const abilitity = await getAbility(result.abilities[0].ability.name);
             setPokemon({ 
                     name,
+                    id: result.id,
                     img: result.sprites.front_default,
-                    main_ability: { name: result.abilities[0].ability.name, effect: getAbilityEffect(abilitity.effect_entries) } });
+                    main_ability: { name: result.abilities[0].ability.name, effect: getAbilityEffect(abilitity.effect_entries) }
+                });
+          
         } catch (error) {
             console.error('Something wrong to mount the pokemon card: ', error)
         }
@@ -150,12 +165,12 @@ const Card = ({ name, lastCard }) => {
                 
             </CardContent>
             <CardFooter>
-                <CardAction>
+                <CardAction title={notImplemented}>
                     <CardActionRemove />
                     <CardActionText>Excluir</CardActionText>
                 </CardAction>
                 <Divider />
-                <CardAction>
+                <CardAction title={notImplemented}>
                     <CardActionEdit />
                     <CardActionText>Editar</CardActionText>
                 </CardAction>
