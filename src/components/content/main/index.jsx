@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 
-import useOnScreen from "../../useOnScreen";
+import useOnScreen from "../../../hooks/useOnScreen";
 
 import CardContent from "../../cards"
+import Context from "../../../context";
 
 const MainGridContent = styled.section`
     width: 93.3%;
@@ -19,14 +20,14 @@ const MainGridContent = styled.section`
 
 const ContentMain = ({ hasMore, isLoading, loadMore, pokemons }) => {
     const { lastCard, isIntersecting, observer } = useOnScreen();
-
+    const {search } = useContext(Context)
     useEffect(() => {
-        if (isIntersecting && hasMore) {
+        if (isIntersecting && hasMore && !search ) {
             loadMore();
             observer.disconnect();
         }
-    }, [isIntersecting, hasMore, loadMore]);
-
+    }, [isIntersecting, hasMore, loadMore, search]);
+    
     return (
         <MainGridContent>
             {pokemons.map((pokemon, index) => {
