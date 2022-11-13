@@ -6,7 +6,7 @@ import ImparLogo from '../../assets/logo-teste.svg'
 const Bar = styled.div`
     height: 64px;
     width: 100vw;
-    position: fixed;
+    position: sticky;
     top: 0;
     background-image: linear-gradient(to right, ${props => props.theme.colors.primary} , ${props => props.theme.colors.secondary});
     display: flex;
