@@ -18,16 +18,28 @@ const MainGridContent = styled.section`
     margin-bottom: 20px;
 `;
 
+const Loading = styled.span`
+    width: 100px;
+    height: 30px;
+    display: flex;
+    background: ${props => props.theme.colors.orange};
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: ${props => props.theme.colors.white};
+`;
+
 const ContentMain = ({ hasMore, isLoading, loadMore, pokemons }) => {
     const { lastCard, isIntersecting, observer } = useOnScreen();
-    const {search } = useContext(Context)
+    const { search } = useContext(Context)
     useEffect(() => {
-        if (isIntersecting && hasMore && !search ) {
+        if (isIntersecting && hasMore && !search) {
             loadMore();
             observer.disconnect();
         }
     }, [isIntersecting, hasMore, loadMore, search]);
-    
+
     return (
         <MainGridContent>
             {pokemons.map((pokemon, index) => {
@@ -36,7 +48,7 @@ const ContentMain = ({ hasMore, isLoading, loadMore, pokemons }) => {
                 return <CardContent key={pokemon.name} name={pokemon.name} />
             })}
 
-            {isLoading && <li>Loading...</li>}
+            {isLoading && <Loading>Carregando...</Loading>}
         </MainGridContent>
     )
 }
