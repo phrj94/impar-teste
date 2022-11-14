@@ -7,15 +7,30 @@ import CardContent from "../../cards"
 import Context from "../../../context";
 
 const MainGridContent = styled.section`
-    width: 93.3%;
-    max-width: 1046px;
     display: grid;
+    max-width: 93.4%;
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
     column-gap: 38px;
     row-gap: 38px;
     justify-content: center;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1045px){
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 800px){
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 520px){
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
 `;
 
 const Loading = styled.span`
