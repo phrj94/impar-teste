@@ -8,16 +8,16 @@ import Context from "./context";
 
 
 const ContainerApp = styled.div`
-  width: 100vw;
-  height: 100%;
+  width: ${props => props.theme.size.fullViewWidth};
+  height: ${props => props.theme.size.full};
   background: ${props => props.theme.colors.background};
   display: flex;
   flex-direction: column;
 `;
 
 const Main = styled.main`
-  width: 100%;
-  height: 100%;
+  width: ${props => props.theme.size.full};
+  height: ${props => props.theme.size.full};
   display: flex;
   flex-direction: column;
 `;

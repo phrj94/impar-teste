@@ -12,12 +12,10 @@ const PrimaryBtn = styled.button`
     justify-content: center;
     color: ${props => props.btnType === "primary" || props.btnType === "remove" ? props.theme.colors.white
         : props.theme.colors.alert};
-    border-radius: 8px;
+    border-radius: ${props => props.theme.border.radius.primary};
     opacity: 1;
-    border-radius: 8px;
     border: ${props => props.btnType === "cancel" ?  '1px solid ' + props.theme.colors.alert : "none"};
     box-shadow: 0px 3px 6px #92207242;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 
     :hover {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 import { ReactComponent as RemoveIcon } from '../../assets/Icon-trash.svg';
@@ -11,11 +11,10 @@ const CardContainer = styled.div`
     flex-direction: column;
     width: 234px;
     height: auto;
-    border-radius: 8px;
+    border-radius: ${props => props.theme.border.radius.primary};
     box-shadow: 0px 3px 6px #E5E5E5;
-    border: 1px solid #E4E4E4;
+    border: ${props => props.theme.border.default};
     background: #FFFFFF 0% 0% no-repeat padding-box;
-   
     opacity: 1;
 `;
 
@@ -32,49 +31,52 @@ const CardTopContent = styled.div`
 `;
 
 const PokemonSprite = styled.img`
-    border-radius: 50%;
-    border: ${props => props.theme.borderDefault};
-    background: ${props => props.theme.colors.border};
+    border-radius: ${props => props.theme.border.radius.circle};
+    border: 1px solid ${props => props.theme.colors.grey};
+    background: ${props => props.theme.colors.lightGrey}; 
 `;
 
 const PokemonName = styled.span`
-    font-size: 18px;
+    font-size: ${props => props.theme.fontSize.large};
     padding: 4px 0;
     text-align: center;
-    width: 100%;
+    width: ${props => props.theme.size.full};
     background: ${props => props.theme.colors.orange};
     color: ${props => props.theme.colors.white};
     border-radius: 8px 8px 0 0;
     text-transform: capitalize;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily}
 `;
 
 const CardTextContent = styled.div`
     display: inline-block;
-    width: 100%;
+    width: ${props => props.theme.size.full};
     margin-top: 8px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily}
 `;
+
 const Label = styled.label`
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: bold; 
+    font-size: ${props => props.theme.fontSize.medium};
     margin-right: 4px;
     color: ${props => props.theme.colors.label};
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily}
+    
 `;
 
 const Text = styled.span`
     font-weight: 500;
-    font-size: 14px;
+    font-size: ${props => props.theme.fontSize.xSmall};
     color: ${props => props.theme.colors.text};
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily}
+    
 `;
 
 const CardFooter = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: ${props => props.theme.size.full};
     height: 43px;
     box-shadow: inset 0px 3px 6px #0000000F;
 `;

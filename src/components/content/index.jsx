@@ -7,7 +7,7 @@ import Context from "../../context";
 import EmptySearch from "../search/emptySearch";
 
 const MainContent = styled.main`
-    width: 100%;
+    width: ${props => props.theme.size.full};
     display: flex;
     flex-direction: column;
     align-items: center;

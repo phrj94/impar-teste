@@ -4,7 +4,7 @@ import styled from "styled-components";
 const EmptyMessage = styled.h2`
     color: ${props => props.theme.colors.text};
     font-size: 48px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily.primary};
     display: flex;
     align-self: center;
 `;

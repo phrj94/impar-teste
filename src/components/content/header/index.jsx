@@ -12,8 +12,8 @@ const MainHeader = styled.section`
 
 const Title = styled.h2`
     color: ${props => props.theme.colors.primary};
-    font-size: 32px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: ${props => props.theme.fontSize.xxLarge};
+    font-family: ${props => props.theme.fontFamily}
 `;
 
 const ContentHeader = () => {
