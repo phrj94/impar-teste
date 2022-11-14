@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
-import { ReactComponent as RemoveIcon } from '../../assets/Icon-trash.svg';
-import { ReactComponent as EditIcon } from '../../assets/Icon-edit.svg';
+import Remove from '../../assets/Icon-trash.svg';
+import Edit from '../../assets/Icon-edit.svg';
 
 import { getPokemonInfo, getAbility } from '../../api/services'
 
@@ -45,14 +45,13 @@ const PokemonName = styled.span`
     color: ${props => props.theme.colors.white};
     border-radius: 8px 8px 0 0;
     text-transform: capitalize;
-    font-family: ${props => props.theme.fontFamily}
+    font-family: ${props => props.theme.fontFamily};
 `;
-
 const CardTextContent = styled.div`
     display: inline-block;
     width: ${props => props.theme.size.full};
     margin-top: 8px;
-    font-family: ${props => props.theme.fontFamily}
+    font-family: ${props => props.theme.fontFamily};
 `;
 
 const Label = styled.label`
@@ -60,7 +59,7 @@ const Label = styled.label`
     font-size: ${props => props.theme.fontSize.medium};
     margin-right: 4px;
     color: ${props => props.theme.colors.label};
-    font-family: ${props => props.theme.fontFamily}
+    font-family: ${props => props.theme.fontFamily};
     
 `;
 
@@ -68,7 +67,7 @@ const Text = styled.span`
     font-weight: 500;
     font-size: ${props => props.theme.fontSize.xSmall};
     color: ${props => props.theme.colors.text};
-    font-family: ${props => props.theme.fontFamily}
+    font-family: ${props => props.theme.fontFamily};
     
 `;
 
@@ -87,22 +86,19 @@ const CardAction = styled.div`
     justify-content: space-between;
 
     :hover {
-        cursor: not-allowed;
+        cursor: pointer;
     }
 `;
 
-const CardActionRemove = styled(RemoveIcon)`
-    color: ${props => props.theme.colors.alert};
-`;
-
-const CardActionEdit = styled(EditIcon)`
-    color: ${props => props.theme.colors.orange};
-`;
 
 const CardActionText = styled.span`
     margin-left: 12px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: ${props => props.theme.fontFamily};
     color: ${props => props.theme.colors.text};
+
+    :hover {
+        color: ${props => props.remove ? props.theme.colors.alert : props.theme.colors.orange};
+    }
 `;
 
 const Divider = styled.div`
@@ -168,12 +164,12 @@ const Card = ({ name, lastCard }) => {
             </CardContent>
             <CardFooter>
                 <CardAction title={notImplemented}>
-                    <CardActionRemove />
-                    <CardActionText>Excluir</CardActionText>
+                    <img src={Remove} alt="Ícone de remoção"/>
+                    <CardActionText remove>Excluir</CardActionText>
                 </CardAction>
                 <Divider />
                 <CardAction title={notImplemented}>
-                    <CardActionEdit />
+                    <img src={Edit} alt="Ícone de edição"/>
                     <CardActionText>Editar</CardActionText>
                 </CardAction>
             </CardFooter>

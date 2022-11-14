@@ -1,6 +1,7 @@
 import React, { useCallback, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as Icon } from '../../assets/lupa.svg'
+import Lupa from '../../assets/lupa.svg'
 import Context from "../../context";
 
 const SearchContainer = styled.div`
@@ -14,7 +15,7 @@ const SearchContainer = styled.div`
 `;
 
 
-const SearchIcon = styled(Icon)`
+const SearchIcon = styled.img`
    position: absolute;
    padding-right: 25px;
 `;
@@ -56,7 +57,7 @@ const Search = () => {
     return (
         <SearchContainer>
             <SearchBar type="search" placeholder="Digite aqui sua busca..." value={search} onChange={(e) => setSearch(e.target.value)} />
-            <SearchIcon />
+            <SearchIcon src={Lupa} alt="Ícone de busca"/>
         </SearchContainer>
     )
 }

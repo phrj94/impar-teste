@@ -13,7 +13,7 @@ const MainHeader = styled.section`
 const Title = styled.h2`
     color: ${props => props.theme.colors.primary};
     font-size: ${props => props.theme.fontSize.xxLarge};
-    font-family: ${props => props.theme.fontFamily}
+    font-family: ${props => props.theme.fontFamily};
 `;
 
 const ContentHeader = () => {

@@ -16,7 +16,7 @@ const PrimaryBtn = styled.button`
     opacity: 1;
     border: ${props => props.btnType === "cancel" ?  '1px solid ' + props.theme.colors.alert : "none"};
     box-shadow: 0px 3px 6px #92207242;
-    font-weight: bold;
+    font-size: ${props => props.theme.fontSize.large};
 
     :hover {
         cursor: not-allowed;
