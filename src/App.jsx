@@ -8,7 +8,7 @@ import Context from "./context";
 
 
 const ContainerApp = styled.div`
-  width: ${props => props.theme.size.fullViewWidth};
+  width: ${props => props.theme.size.full};
   height: ${props => props.theme.size.full};
   background: ${props => props.theme.colors.background};
   display: flex;
