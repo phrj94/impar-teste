@@ -1,4 +1,4 @@
-# IMPAR-TESTE
+# ÍMPAR-TESTE
 
 ## Descrição do Projeto
 <p align="center">Este é um pequeno projeto em <strong>React</strong>, que acessa a api <span> <a href='https://pokeapi.co/'>PokeApi</a></span> para acessar dados do universo de Pokemón e mostra os dados em formatos de cartões para o usuário informando nome, imagem do pokemón, uma habilidade e uma descrição rápida da mesma.</p>
